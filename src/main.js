@@ -8,8 +8,6 @@ import "babel-polyfill"
 
 //二维码生成
 import QRCode from 'qrcode'
-
-
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);

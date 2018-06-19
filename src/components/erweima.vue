@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div>
+    <div class="erweima">
+        <div class="first">
             <canvas id="canvas"></canvas>     
             <img :src="canvasImg" style="width:80px;height:80px;" alt="">       
         </div>
@@ -11,7 +11,6 @@
 <script>
 import QRCode1 from 'qrcode' 
 import QRCode from '../vendor/qrcode.js'
-
 export default {
     data(){
         return{
@@ -39,11 +38,12 @@ export default {
                    this.canvasImg =  canvas.toDataURL('image/png').replace("image/png", "image/octet-stream");//toDataURL是canvas的一个方法，没有用get(0)会报错canvas.tofDataURL is not a function
     //方式二：参考http://code.ciaoca.com/javascript/qrcode/  参数说明
             this.qrcode =  new QRCode(document.getElementById("qrcode"), {
-                width : 80,//设置宽高  
-                height : 80,
+                width : 100,//设置宽高  
+                height : 100,
                 colorDark : '#f00',//前景颜色
                 colorLight : '#fff',//背景颜色
-                text:'http://www.baidu.com'//扫描所得内容--网址跳转，内容直接展示
+                // text:'http://www.baidu.com'//扫描所得内容--网址跳转，内容直接展示
+                text:'"批次:1408M1" \n "图号:M01-01-001"'
             });  
         },
         save(){
@@ -53,7 +53,8 @@ export default {
     }
 }
 </script>
-<style scoped>
+<style scoped lang='scss'>
+    @import '../assets/scss/erweima'
 </style>
 
 
