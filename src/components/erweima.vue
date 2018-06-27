@@ -2,7 +2,7 @@
     <div class="erweima">
         <div class="first">
             <canvas id="canvas"></canvas>     
-            <img :src="canvasImg" style="width:80px;height:80px;" alt="">       
+            <img :src="canvasImg">       
         </div>
         <input type="text" v-model="cont">        
         <div id="qrcode"></div>

@@ -1,0 +1,10 @@
+
+
+注：关于scss文件私有引入的简单使用
+//@import url('../assets/scss/urlce.scss');//此引用类似link的引入方式，并且是放置在页面加载完成后才会编译，所以不是私有的属性，不具备scss解析的能力，本质还是一个正常的css文件；
+// @import '../assets/scss/urlce.scss' 此引入方式类似link引入在scss加载完成才会向下执行，所以会被scss的loader解析，属于私有数据的引入方式
+
+1.scss 使用：
+    npm install sass-loader node-sass --save-dev    lang='scss'
+    无需配置utils.js会根据引入的不同执行不同的loader
+    background:bg-color bg-image position/bg-size bg-repeat bg-origin bg-clip bg-attachment initial|inherit;
