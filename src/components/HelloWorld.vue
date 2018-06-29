@@ -12,6 +12,7 @@
         <router-link to='erweima'>二维码</router-link>
         <router-link to='bround'>数据绑定</router-link>
         <router-link to='elementUi'>elementUi</router-link>
+        <router-link to='components'>组件之间传值</router-link>
     </div>
 </template>
 <script>
