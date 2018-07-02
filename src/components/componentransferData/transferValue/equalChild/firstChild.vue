@@ -1,7 +1,6 @@
 <template>
     <div class="box">
-        我是顶部导航
-        <el-button size="small" @click="senDataToSecondChild">大儿子向二儿子传值</el-button>
+        <el-button size="small" @click="senDataToSecondChild">同级组件传值--发送组件</el-button>
     </div>
 </template>
 <script>
@@ -11,7 +10,7 @@ export default {
  methods:{
      senDataToSecondChild(){
          let num = Math.floor(Math.random()*500 + 100);
-         busEvent.$emit('userDefinedEvent',`大儿子给二儿子值${num}`);
+         busEvent.$emit('userDefinedEvent',`兄组件的当前值：${num}`);
      }
  }
 }
@@ -20,7 +19,7 @@ export default {
     .box{
         height: 50px;
         width: 100%;
-        border: 1px solid red;
+        border: 1px solid #ccc;
         line-height: 50px;
     }
 </style>

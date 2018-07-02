@@ -1,27 +1,20 @@
 <template>
-    <div>
-        我是左侧导航二儿子
-        <div>
-            <span>我从大儿子接收的值放在这:</span>
-            <span style="color:#f00">{{msg}}</span>
-        </div>
-    </div>
+    <section>
+        同组件传值---弟--接收组件:<span style="color:#00c;display:inline-block;">{{msg}}</span>
+    </section>
 </template>
 <script>
 import busEvent from '@/common/eventBus'
 export default {
     data(){
         return {
-            msg:"我本来有值"
+            msg:"初始值"
         }
     },
     mounted(){
         busEvent.$on('userDefinedEvent',(val)=>{
             this.msg = val;
         })
-    },
-    methods:{
-        
     }
 }
 </script>

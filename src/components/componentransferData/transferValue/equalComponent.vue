@@ -21,9 +21,9 @@ export default {
 </script>
 <style lang="scss" scoped>
     .leftBox{
-        height: 100%;
-        width: 150px;
-        border: 1px solid #f00;
+        margin-top: 10px;
+        height: 60px;
+        border: 1px solid #ccc;
     }
 </style>
 

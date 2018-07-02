@@ -1,9 +1,8 @@
 <template>
-    <div>子父组件
-        <div>
-            <div v-text="childData || '' " style="color:#f00;"></div>
-            <secondChild @getChildPassData="getChildPassData"></secondChild>
-        </div>
+    <div>
+        <secondChild @send="getChildData"></secondChild>        
+        子父组件传值:
+        <span v-text="childData" style="display:inline-block;color:#f00;font-size:14px;"></span>
     </div>
 </template>
 <script>
@@ -18,7 +17,7 @@ export default {
     };
   },
   methods: {
-    getChildPassData(val) {
+    getChildData(val) {
       this.childData = val;
     }
   }

@@ -1,6 +1,6 @@
 <template>
     <div>
-        父组件给子组件传值
+        父子组件传值：
         <el-button size="small" @click="getPassData">点击给子组件传值</el-button>
         <div class="childbox">
           <children :passChildData="data"></children>
@@ -10,7 +10,6 @@
 
 <script>
 import children from "./child";
-
 export default {
   components: {
     children
@@ -23,7 +22,7 @@ export default {
   methods: {
     getPassData() {
       let randomNum = Math.floor(Math.random() * 100 + 1);
-      this.data = "老子就是老子怎么都能儿子传值" + randomNum;
+      this.data = "父组件值" + randomNum;
     }
   }
 };

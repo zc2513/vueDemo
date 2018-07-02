@@ -11,10 +11,8 @@
     data() {
       return {
         btncon:[{uri:'/components/childParentTransfer',con:'子父组件'}
-                ,{uri:'/components/equalComponent',con:'同级组件'}
                 ,{uri:'/components/parentChildTransfer',con:'父子组件'}
-                // ,{uri:'/elementUi/tableselect',con:'单层JSON循环'}
-                // ,{uri:'/elementUi/tableJson',con:'完整JSON循环'}
+                ,{uri:'/components/equalComponent',con:'同级组件'}                
                 ],
       }
     }
