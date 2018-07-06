@@ -6,7 +6,7 @@ import watchDemo1 from "@/components/watchDemo.1";
 import excel from "@/components/excel";
 import erweima from "@/components/erweima";
 import detectaphone from "@/components/detectaphone";
-import bround from "@/components/demo/bround";
+
 import elementUi from "@/components/element/table";
 import tablestyle from "@/components/element/tablecomponent/tablestyle";
 import tableEven from "@/components/element/tablecomponent/tableEven";
@@ -18,8 +18,19 @@ import childParentTransfer from "@/components/componentransferData/transferValue
 import equalComponent from "@/components/componentransferData/transferValue/equalComponent";
 import parentChildTransfer from "@/components/componentransferData/transferValue/parentChildTransfer";
 // 组件传值
-
 import components from "@/components/componentransferData/components";
+
+import bround from "@/components/demo/bround";
+import vif from "@/components/demo/vif";
+import vfor from "@/components/demo/vfor";
+import input from "@/components/demo/input";
+import slot from "@/components/demo/slot";
+
+import transition from "@/components/transition/transition";
+
+import extend from "@/components/extend/extend";
+
+import directive from "@/components/directive/directive";
 
 Vue.use(Router);
 
@@ -52,7 +63,25 @@ export default new Router({
     },
     {
       path: "/bround",
-      component: bround
+      component: bround,
+      children:[
+          {
+            path: "vif",
+            component: vif
+          },
+          {
+            path: "vfor",
+            component: vfor
+          },
+          {
+            path: "input",
+            component: input
+          },
+          {
+            path: "slot",
+            component: slot
+          },
+      ]
     },
     {
       path: "/elementUi",
@@ -97,6 +126,26 @@ export default new Router({
           component: parentChildTransfer
         }
       ]
-    }
+    },
+    {
+        path:"/transition",
+        component: transition
+    },
+    {
+        path:"/extend",
+        component: extend
+    },
+    {
+        path:"/directive",
+        component: directive
+    },
   ]
 });
+Vue.component('button-counter', {//全局组件注册
+    data: function () {
+        return {
+            count: 0
+        }
+    },
+    template: '<button v-on:click="count++">全局组件点击+1 {{ count }} .</button>'
+})

@@ -23,3 +23,10 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+
+
+Vue.filter('capitalize', function (value) {//全局过滤器 首字母大写
+    if (!value) return ''
+    value = value.toString()
+    return value.charAt(0).toUpperCase() + value.slice(1)
+})

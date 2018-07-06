@@ -2,17 +2,21 @@
     <div>
         <p>Original message: "{{ message }}"</p>
         <p>Computed reversed message: "{{ reversedMessage }}"</p>
+        <p>$forceUpdate---强制更新，一般是vue数据数组追踪理解不到位 </p>
         <section>
             <el-button type="success" @click="lee">按钮</el-button>
         </section>
         <router-link to='watch'>watch</router-link>
         <router-link to='watch1'>watch1</router-link>
         <router-link to='detectaphone'>detectaphone</router-link>
-        <router-link to='excel'>excel</router-link>
+        <router-link to='excel'>excel-表格导出</router-link>
         <router-link to='erweima'>二维码</router-link>
-        <router-link to='bround'>数据绑定</router-link>
+        <router-link to='bround'>数据绑定+左上固定布局</router-link>
         <router-link to='elementUi'>elementUi</router-link>
-        <router-link to='components'>组件之间传值</router-link>
+        <router-link to='components'>组件传值</router-link>
+        <router-link to='transition'>过渡效果</router-link>
+        <router-link to='extend'>可复用性，混入</router-link>
+        <router-link to='directive'>自定义指令---与过滤器</router-link>
     </div>
 </template>
 <script>

@@ -5,15 +5,18 @@
 </template>
 <script>
 export default {
-  data() {
-    return {};
-  },
-  methods: {
-    passDataToParen() {
-      let randomData = Math.floor(Math.random() * 200 + 100);
-      let str = this.$emit("send",`子组件的当前值：${randomData}`);
+    data() {
+        return {};
+    },
+    methods: {
+        passDataToParen() {
+            let randomData = Math.floor(Math.random() * 200 + 100);
+            let str = this.$emit("send",`子组件的当前值：${randomData}`);
+        },
+        lee(){
+            return randomData = Math.floor(Math.random() * 200 + 100);
+        }
     }
-  }
 };
 </script>
 <style lang="scss" scoped>

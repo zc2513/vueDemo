@@ -2,7 +2,7 @@
     <div>
         <secondChild @send="getChildData"></secondChild>        
         子父组件传值:
-        <span v-text="childData" style="display:inline-block;color:#f00;font-size:14px;"></span>
+        <span v-text="childData" style="display:inline-block;color:#00c;font-size:14px;"></span>
     </div>
 </template>
 <script>
@@ -13,7 +13,7 @@ export default {
   },
   data() {
     return {
-      childData: null
+      childData: '初始值'
     };
   },
   methods: {

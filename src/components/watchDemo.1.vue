@@ -27,7 +27,7 @@ export default {
             console.log('computed',Math.random().toFixed(2)*100)
             return this.firstName + ' ' + this.lastName
         }
-    }
+    },
 }
 //执行：当firstName或者lastName值改变的时候->fullName会改变 当fullName改变的时候 ele被赋值   监听属性只有被监听的内容发生改变 才会执行,不改变不执行
 //1.watch适合监听 一个变量改变影响多个结果 所有监听的值一般都是定义好的
