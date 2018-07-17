@@ -17,6 +17,15 @@
         <router-link to='transition'>过渡效果</router-link>
         <router-link to='extend'>可复用性，混入</router-link>
         <router-link to='directive'>自定义指令---与过滤器</router-link>
+        <router-link :to="`route/${message}`">页面路由--初级</router-link>
+        <br>
+        <br>
+        <br>
+        <div class="text">
+            <div class="textont">
+                我是文本内容我是文本内容我是文本内容我是文本内容我是文本内容我是文本内容
+            </div>
+        </div>
     </div>
 </template>
 <script>
@@ -48,6 +57,20 @@ export default {
     section{
         padding-left: 40px;
         height: 50px;
+    }
+    .text{
+        width: 30%;
+        height: 40px;
+        border-radius: 20px;
+        background-color: #ccc;
+        .textont{
+            width: 80%;
+            margin-left:10%;
+            line-height: 40px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
     }
 
 </style>

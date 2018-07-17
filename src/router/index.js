@@ -6,6 +6,7 @@ import watchDemo1 from "@/components/watchDemo.1";
 import excel from "@/components/excel";
 import erweima from "@/components/erweima";
 import detectaphone from "@/components/detectaphone";
+import route from "@/components/route";
 
 import elementUi from "@/components/element/table";
 import tablestyle from "@/components/element/tablecomponent/tablestyle";
@@ -34,118 +35,140 @@ import directive from "@/components/directive/directive";
 
 Vue.use(Router);
 
-export default new Router({
-  routes: [
-    {
-      path: "/",
-      name: "HelloWorld",
-      component: HelloWorld
-    },
-    {
-      path: "/watch",
-      component: watchDemo
-    },
-    {
-      path: "/watch1",
-      component: watchDemo1
-    },
-    {
-      path: "/excel",
-      component: excel
-    },
-    {
-      path: "/erweima",
-      component: erweima
-    },
-    {
-      path: "/detectaphone",
-      component: detectaphone
-    },
-    {
-      path: "/bround",
-      component: bround,
-      children:[
-          {
-            path: "vif",
-            component: vif
-          },
-          {
-            path: "vfor",
-            component: vfor
-          },
-          {
-            path: "input",
-            component: input
-          },
-          {
-            path: "slot",
-            component: slot
-          },
-      ]
-    },
-    {
-      path: "/elementUi",
-      component: elementUi,
-      children: [
+const router = new Router({
+    routes: [
         {
-          path: "tablestyle",
-          component: tablestyle
+            path: "/",
+            name: "HelloWorld",
+            component: HelloWorld
         },
         {
-          path: "tableEven",
-          component: tableEven
+            path: "/watch",
+            component: watchDemo
         },
         {
-          path: "tableselect",
-          component: tableselect
+            path: "/watch1",
+            component: watchDemo1,
+            beforeEnter: (to, from, next) => {
+                console.log('to', to)
+                console.log('from', from)
+                next()
+            }
         },
         {
-          path: "tableradio",
-          component: tableradio
+            path: "/excel",
+            component: excel
         },
         {
-          path: "tableJson",
-          component: tableJson
-        }
-      ]
-    },
-    {
-      path: "/components",
-      component: components,
-      children: [
-        {
-          path: "childParentTransfer",
-          component: childParentTransfer
+            path: "/erweima",
+            component: erweima
         },
         {
-          path: "equalComponent",
-          component: equalComponent
+            path: "/detectaphone",
+            component: detectaphone
         },
         {
-          path: "parentChildTransfer",
-          component: parentChildTransfer
-        }
-      ]
-    },
-    {
-        path:"/transition",
-        component: transition
-    },
-    {
-        path:"/extend",
-        component: extend
-    },
-    {
-        path:"/directive",
-        component: directive
-    },
-  ]
+            path: "/bround",
+            component: bround,
+            children: [
+                {
+                    path: "vif",
+                    component: vif
+                },
+                {
+                    path: "vfor",
+                    component: vfor
+                },
+                {
+                    path: "input",
+                    component: input
+                },
+                {
+                    path: "slot",
+                    component: slot
+                },
+            ]
+        },
+        {
+            path: "/elementUi",
+            component: elementUi,
+            children: [
+                {
+                    path: "tablestyle",
+                    component: tablestyle
+                },
+                {
+                    path: "tableEven",
+                    component: tableEven
+                },
+                {
+                    path: "tableselect",
+                    component: tableselect
+                },
+                {
+                    path: "tableradio",
+                    component: tableradio
+                },
+                {
+                    path: "tableJson",
+                    component: tableJson
+                }
+            ]
+        },
+        {
+            path: "/components",
+            component: components,
+            children: [
+                {
+                    path: "childParentTransfer",
+                    component: childParentTransfer
+                },
+                {
+                    path: "equalComponent",
+                    component: equalComponent
+                },
+                {
+                    path: "parentChildTransfer",
+                    component: parentChildTransfer
+                }
+            ]
+        },
+        {
+            path: "/transition",
+            component: transition
+        },
+        {
+            path: "/extend",
+            component: extend,
+            meta: { senddata: '我是混入式extend路线元字段数据--meta' },
+        },
+        {
+            path: "/directive",
+            component: directive,
+            meta: { senddata: '我是directive路线元字段数据--meta' },
+        },
+        {
+            path: "/route/:id?",
+            component: route,
+            meta: { senddata: '我是路线元字段数据--meta' },
+            beforeEnter: (to, from, next) => {
+                if (confirm('级别二--组件配置内路由拦截')) {
+                    next()
+                } else {
+                    alert('取消进入')
+                    next(false)
+                }
+            }
+        },
+    ]
 });
-Vue.component('button-counter', {//全局组件注册
-    data: function () {
-        return {
-            count: 0
-        }
-    },
-    template: '<button v-on:click="count++">全局组件点击+1 {{ count }} .</button>'
+router.beforeEach((to, from, next) => {
+    console.log('级别一--第一个拦截，-全局路由拦截 --执行next()才会有下面的路由页面展示')
+    const { matched } = to;
+    console.log('matched--一级', matched)
+    next()
 })
+router.afterEach((to, from) => {
+    console.log('在挂钩后注册全局，但与守卫不同，这些挂钩不会获得next功能并且不会影响导航：')
+})
+export default router;
