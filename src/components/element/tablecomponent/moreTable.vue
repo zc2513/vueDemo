@@ -21,8 +21,9 @@ import tablePug from './tablePlugin'
                     tableData: [],
                     titles: [],
                     // type:true,//有无选择框 true/false 默认展示
-                    btnconfig:{//按钮项配置
+                    btnconfig:{//----------------------------按钮项配置
                         title:'操作项',
+                        width:'200',
                         btnlist:[
                             {
                                 con:'删除',                                
@@ -36,7 +37,6 @@ import tablePug from './tablePlugin'
                                 concolor:'#0c0',
                                 backgroundColor:'#f00'
                             },
-
                         ] 
                     }
                 },

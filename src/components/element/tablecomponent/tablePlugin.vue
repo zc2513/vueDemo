@@ -15,7 +15,7 @@
                                     > 
                                     <!-- :width=" (item.name == '订单金额' || item.name == '支付方式') ? '100':''" -->
                     </el-table-column>
-                    <el-table-column fixed="right" width='200' type="btn"  v-if="list.btnconfig" :label='list.btnconfig.title' align="center">
+                    <el-table-column fixed="right"  type="btn"  v-if="list.btnconfig" :label='list.btnconfig.title' :width='list.btnconfig.width' align="center">
                             <template slot-scope="scope">   
                                 <el-button 
                                     v-for="(ele,y) in list.btnconfig.btnlist" :key='y'
