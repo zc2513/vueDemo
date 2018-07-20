@@ -15,6 +15,9 @@ import tableselect from "@/components/element/tablecomponent/tableselect";
 import tableradio from "@/components/element/tablecomponent/tableradio";
 import tableJson from "@/components/element/tablecomponent/tableJson";
 import moreTable from "@/components/element/tablecomponent/moreTable";
+import nav from "@/components/element/nav";
+
+
 
 import childParentTransfer from "@/components/componentransferData/transferValue/childParentTransfer";
 import equalComponent from "@/components/componentransferData/transferValue/equalComponent";
@@ -119,6 +122,10 @@ const router = new Router({
                     component: moreTable
                 }
             ]
+        },
+        {
+            path: '/nav', 
+            component: nav
         },
         {
             path: "/components",

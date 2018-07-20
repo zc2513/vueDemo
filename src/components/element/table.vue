@@ -1,13 +1,7 @@
 <template>
   <div style="margin-top:10px;">
-      <div style="background-color:#fff;padding-bottom:20px;margin-bottom:20px;">
-        <h2>table表格</h2>
-        <router-link v-for="(item,index) in btncon" :key='index' v-text="item.con" :to='item.uri' ></router-link>
-      </div>
-      <div style="background-color:#fff;padding-bottom:20px;margin-bottom:20px;">
-        <h2>左侧导航栏</h2>
-        <router-link v-for="(item,index) in sliderNav" :key='index' v-text="item.con" :to='item.uri' ></router-link>
-      </div>
+      <router-link v-for="(item,index) in btncon" :key='index' v-text="item.con" :to='item.uri' ></router-link>
+      
       <div style="margin-top:20px;">
             <router-view/>          
       </div>
@@ -22,9 +16,8 @@
                 ,{uri:'/elementUi/tableradio',con:'完整单选全选'}
                 ,{uri:'/elementUi/tableselect',con:'单层JSON循环'}
                 ,{uri:'/elementUi/tableJson',con:'json带有操作的选择'}
-                ,{uri:'/elementUi/moreTable',con:'插件封装-多功能表格'}],
-        sliderNav:[{uri:'/elementUi/nav',con:'左侧导航'}]
-                ,
+                ,{uri:'/elementUi/moreTable',con:'插件封装-多功能表格'},
+                {uri:'/nav',con:'导航栏'}],
       }
     }
   }
