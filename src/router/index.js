@@ -14,6 +14,7 @@ import tableEven from "@/components/element/tablecomponent/tableEven";
 import tableselect from "@/components/element/tablecomponent/tableselect";
 import tableradio from "@/components/element/tablecomponent/tableradio";
 import tableJson from "@/components/element/tablecomponent/tableJson";
+import moreTable from "@/components/element/tablecomponent/moreTable";
 
 import childParentTransfer from "@/components/componentransferData/transferValue/childParentTransfer";
 import equalComponent from "@/components/componentransferData/transferValue/equalComponent";
@@ -112,6 +113,10 @@ const router = new Router({
                 {
                     path: "tableJson",
                     component: tableJson
+                },
+                {
+                    path: "moreTable",
+                    component: moreTable
                 }
             ]
         },

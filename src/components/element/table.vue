@@ -14,7 +14,8 @@
                 ,{uri:'/elementUi/tableEven',con:'表格方法及事件'}
                 ,{uri:'/elementUi/tableradio',con:'完整单选全选'}
                 ,{uri:'/elementUi/tableselect',con:'单层JSON循环'}
-                ,{uri:'/elementUi/tableJson',con:'完整JSON循环'}],
+                ,{uri:'/elementUi/tableJson',con:'json带有操作的选择'}
+                ,{uri:'/elementUi/moreTable',con:'插件封装-多功能表格'}],
       }
     }
   }

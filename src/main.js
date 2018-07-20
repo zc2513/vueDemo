@@ -4,7 +4,10 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import "babel-polyfill"
+require('./mock.js')
 
+import post from './common/http.config.js'
+Vue.prototype.$http = post
 
 //二维码生成
 import QRCode from 'qrcode'
@@ -29,7 +32,6 @@ Vue.filter('capitalize', function (value) {//全局过滤器 首字母大写
     value = value.toString()
     return value.charAt(0).toUpperCase() + value.slice(1)
 })
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

@@ -23,7 +23,7 @@
             </div>
 
             <div style="margin-top:100px;">
-                <el-button type='info' @click='save("/bround/vif")'>条件渲染</el-button>            
+                <el-button type='info' @click='save("/bround/vif")'>条件渲染与数据更改</el-button>            
                 <el-button type='info' @click='save("/bround/vfor")'>v-for的组件增删</el-button>            
                 <el-button type='info' @click='save("/bround/input")'>表单属性</el-button>            
                 <el-button type='info' @click='save("/bround/slot")'>组件插槽</el-button>            

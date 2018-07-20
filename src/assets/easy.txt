@@ -8,3 +8,8 @@
     npm install sass-loader node-sass --save-dev    lang='scss'
     无需配置utils.js会根据引入的不同执行不同的loader
     background:bg-color bg-image position/bg-size bg-repeat bg-origin bg-clip bg-attachment initial|inherit;
+
+
+2.mock.js 
+    1. npm install mockjs --save-dev    --package.json里面能够找到说明安装成功
+    2. src里创建mock.js   

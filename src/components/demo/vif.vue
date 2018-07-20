@@ -21,7 +21,7 @@
                 <span style="display:inline-block;width:100px;height:30px;line-height:30px;text-align:center;color:#fff;background-color:#333;margin-right:4px;" 
                     v-for="(item,index) in options" :key='index' v-text="item"></span>
             </div>
-            <el-button type="info" @click="changeVal">通过arr[index]改变数组</el-button>
+            <el-button type="info" @click="changeVal">通过arr[index]改变数组 ---数据不会刷新</el-button>
             <el-button type="info" @click="change">通过splice改变数组--解决方式1</el-button>
             <el-button type="info" @click="change2">通过this.$set改变数组--解决方式2</el-button>
         </section>
@@ -32,7 +32,7 @@
                 <span style="display:inline-block;width:100px;height:30px;line-height:30px;text-align:center;color:#fff;background-color:#333;margin:2px;" v-text="item.age"></span>
                 <span style="display:inline-block;width:100px;height:30px;line-height:30px;text-align:center;color:#c00;background-color:#333;margin:2px;" v-text="item.leave || '无'"></span>
             </div>
-            <el-button type="info" @click="objchangeVal">通过object[index]改变对象</el-button>
+            <el-button type="info" @click="objchangeVal">通过object[index]改变对象 ---数据不会刷新</el-button>
             <el-button type="info" @click="objchange">通过splice改变对象--解决方式1</el-button>
             <el-button type="info" @click="objchange2">this.$set给对象添加新元素--解决方式2</el-button>
         </section>
