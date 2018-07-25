@@ -1,33 +1,39 @@
 <template>
     <div>
-        <h2>多功能表格---------------单选</h2>
+        <h4 style="color:#c00;">多功能表格---------------单选</h4>
         <div class="btncls">
            <el-button type="info" @click="getdata(1)">有选择框</el-button>
            <el-button type="info" @click="getdata(2)">无选择框</el-button>
         </div>
+        <div v-if="suninfo">
+            <b style="color:00c;font-size:20px;">子组件所传的值展示区域(调试框可看所有值)：</b> {{suninfo.type || suninfo}}
+        </div>
         <tablePug :msg = 'tableList' @sendVal='getVal'></tablePug>
+        <page @pagesend='getPageData'></page>
     </div>
 </template>
 
 <script>
 import tablePug from './tablePlugin'
+import page from './page'
     export default {
         components:{
-            tablePug
+            tablePug,
+            page
         },
         data(){
             return{
-                tableList:{
+                tableList:{//表格所需数据
                     tableData: [],
                     titles: [],
-                    // type:true,//有无选择框 true/false 默认展示
+                    type:true,//有无选择框 true/false 默认为true
                     btnconfig:{//----------------------------按钮项配置
-                        title:'操作项',
-                        width:'200',
+                        title:'按钮项',
+                        width:'200',//每增加一个按钮宽度增加100
                         btnlist:[
                             {
                                 con:'删除',                                
-                                type:'primary',
+                                type:'primary',//按钮模式
                                 concolor:'#00c',
                                 backgroundColor:'#ccc',            
                             },
@@ -40,11 +46,13 @@ import tablePug from './tablePlugin'
                         ] 
                     }
                 },
-                initData:[]
+                initData:[],
+                suninfo:''
             }
         },
         created() {
             this.getVal()
+            this.getPageData()
         },
         mounted() {
             this.init()                           
@@ -69,7 +77,11 @@ import tablePug from './tablePlugin'
 
             },
             getVal(val){
+                this.suninfo = val
                 console.log(val)
+            },
+            getPageData(params){
+                this.suninfo = params;
             },
             getdata(params){
                 this.tableList.tableData = this.initData.slice((params-1)*8,params*8)

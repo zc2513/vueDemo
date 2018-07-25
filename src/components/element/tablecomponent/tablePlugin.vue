@@ -21,7 +21,7 @@
                                     v-for="(ele,y) in list.btnconfig.btnlist" :key='y'
                                     :type="ele.type" 
                                     size='mini'            
-                                    @click='operate(ele.con)'>
+                                    @click.stop='operate(ele.con,scope.row)'>
                                     {{ele.con}}</el-button>
                             </template>  
                     </el-table-column>
@@ -78,8 +78,8 @@ export default {
         dblclick(row){
             this.radio(row,'双击')//走 第三次点击 所以还是选中
         },
-        operate(item){
-            this.$emit('sendVal',{type:item,data:this.selectData})
+        operate(item,row){
+            this.$emit('sendVal',{type:item,data:row})
         },
     }
 };

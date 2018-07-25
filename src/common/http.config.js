@@ -43,7 +43,7 @@ axios.interceptors.response.use((res) => {
     console.log(1)
     return res;
 }, (error) => {
-    console.log(40, '请求未发送报错，一般为网络错误或者链接服务器失败')
+    console.log(40, '请求未发送报错，一般为网络错误或者链接服务器失败', error.status)
     return Promise.reject(error);
 });
 export default {
@@ -58,11 +58,9 @@ export default {
             }
         }).then((response) => {
             return respond(response)
-        }
-        ).then((res) => {
+        }).then((res) => {
             return stateCode(res)
-        }
-        )
+        })
     },
     postObj(url, data) {
         return axios({
@@ -83,6 +81,23 @@ export default {
             }
         )
     },
+    postFile(url, data) {
+        return axios({
+            method: 'post',
+            url,
+            data,
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest',
+                "Content-Type": "multipart/form-data"
+            }
+        })
+        .then((response) => {
+            return respond(response)
+        })
+        .then((res) => {
+            return stateCode(res)
+        })
+    },
     get(url, params) {
         return axios({
             method: 'post',
@@ -91,15 +106,11 @@ export default {
             headers: {
                 'X-Requested-With': 'XMLHttpRequest'
             }
-        }).then(
-            (response) => {
-                return respond(response)
-            }
-        ).then(
-            (res) => {
-                return stateCode(res)
-            }
-        )
+        }).then((response) => {
+            return respond(response)
+        }).then((res) => {
+            return stateCode(res)
+        })
     }
 }
 

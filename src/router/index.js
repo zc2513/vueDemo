@@ -16,6 +16,7 @@ import tableradio from "@/components/element/tablecomponent/tableradio";
 import tableJson from "@/components/element/tablecomponent/tableJson";
 import moreTable from "@/components/element/tablecomponent/moreTable";
 import nav from "@/components/element/nav";
+import upfile from "@/components/element/file/upfile";
 
 
 
@@ -126,6 +127,10 @@ const router = new Router({
         {
             path: '/nav', 
             component: nav
+        },
+        {
+            path: '/upfile', 
+            component: upfile
         },
         {
             path: "/components",
