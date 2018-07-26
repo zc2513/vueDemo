@@ -47,14 +47,20 @@ import oddFile from './el-upfileodd.vue'
                     })
                 },
                 upBS(){
-                    this.imgsrc = img64;
+                    // this.imgsrc = img64;//有网的时候需要放到请求处理展示，如果上传失败直接提示                    
                     let data =JSON.stringify({
                             "picData":img64,
                             "picExt":'.bmp',
                             'fileType':'2'
                         })
-                    this.$http.postObj('/common/attachmentUploadByBase64',data).then(res=>{
-                        console.log(res)
+                    this.$http.postObj('http://seal.yuxinyun.net:8082/common/attachmentUploadByBase64',data).then(res=>{
+                        if(res.state == 'OK'){
+                            this.imgsrc = img64;
+                            this.$notify({
+                                title:'上传成功',
+                            })
+                            
+                        }
                     })
                 }
         }

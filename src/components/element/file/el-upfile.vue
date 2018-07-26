@@ -4,8 +4,8 @@
             ref='fileup'
             list-type="picture-card" 
             :on-preview="handlePictureCardPreview" 
-            :file-list="fileList2"
-            :limit='2'
+            :file-list="fileList"
+            :limit='4'
             :http-request='upimg'
             :on-exceed='ccxz'
             :on-remove="handleRemove">
@@ -28,18 +28,15 @@
             return {
                 dialogImageUrl: '',
                 dialogVisible: false,
-                fileList2:[]
+                fileList:[]
             };
         },
         props:["setImaSrc"],
         watch:{
             setImaSrc(value){
-                // this.fileList2.push({
-                //     url:value
-                // });
-                this.fileList2=[{
+                this.fileList.push({
                     url:value
-                }];
+                });
             }
         },
         methods: {
@@ -53,14 +50,17 @@
                 this.dialogVisible = true;
             },
             upimg(file){
-                console.log(666,file)    
                 let img = file.file;
                 console.log(img)
+                let imageUrl = URL.createObjectURL(img);
+                this.fileList.push({ //一般在有拍照和本地图片上传，才使用，防止用户拍照和本地混合上传，***如果使用一般也要在传成功后添加***
+                    url:imageUrl
+                })
                 // console.log(`文件大小${img.size},类型：${img.type}`)
                 var param = new FormData();
                     param.append("file",img)
                     param.append('chunk', '{"name":"测试"}')
-                    this.$http.postFile("/common/attachmentUpload/",param).then((data)=>{
+                    this.$http.postFile("http://seal.yuxinyun.net:8082/common/attachmentUpload/",param).then((data)=>{
                         if(data.state == 'OK'){
                             console.log(data);
                             this.$notify({
