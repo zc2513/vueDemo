@@ -768,351 +768,351 @@ Mock.mock("/api/data", (req, res) => {
 Mock.mock("/api/data2", (req, res) => {
   return {
     data: [
-        {
-          upmsPermission: {
-            permissionId: 27,
-            systemId: null,
-            pid: 0,
-            name: "帮助中心",
-            type: null,
-            permissionValue: "",
-            uri: "/help",
-            icon: "#",
-            status: 1,
-            ctime: 1524125183000,
-            orders: 11
-          },
-          children: [
-            {
-              upmsPermission: {
-                permissionId: 59,
-                systemId: null,
-                pid: 27,
-                name: "帮助中心",
-                type: null,
-                permissionValue: null,
-                uri: "/home/help",
-                icon: "#",
-                status: 1,
-                ctime: 1524651653000,
-                orders: 0
-              },
-              children: [
-                {
-                  upmsPermission: {
-                    permissionId: 139,
-                    systemId: null,
-                    pid: 59,
-                    name: "操作手册",
-                    type: null,
-                    permissionValue: null,
-                    uri: "/home/help/operationManual",
-                    icon: "#",
-                    status: 1,
-                    ctime: 1528967952000,
-                    orders: 2
-                  },
-                  children: []
-                },
-                {
-                  upmsPermission: {
-                    permissionId: 123,
-                    systemId: null,
-                    pid: 59,
-                    name: "驱动下载",
-                    type: null,
-                    permissionValue: null,
-                    uri: "/home/help/commonSealFlow",
-                    icon: "#",
-                    status: 1,
-                    ctime: 1525834477000,
-                    orders: 1
-                  },
-                  children: []
-                }
-              ]
-            }
-          ]
+      {
+        upmsPermission: {
+          permissionId: 27,
+          systemId: null,
+          pid: 0,
+          name: "帮助中心",
+          type: null,
+          permissionValue: "",
+          uri: "/help",
+          icon: "el-icon-printer",
+          status: 1,
+          ctime: 1524125183000,
+          orders: 11
         },
-        {
-          upmsPermission: {
-            permissionId: 43,
-            systemId: null,
-            pid: 0,
-            name: "日常管理",
-            type: null,
-            permissionValue: null,
-            uri: "/everyday",
-            icon: "#",
-            status: 1,
-            ctime: 1524556502000,
-            orders: 5
-          },
-          children: [
-            {
-              upmsPermission: {
-                permissionId: 52,
-                systemId: null,
-                pid: 43,
-                name: "日常管理",
-                type: null,
-                permissionValue: null,
-                uri: "#",
-                icon: "#",
-                status: 1,
-                ctime: 1524650411000,
-                orders: 1
-              },
-              children: [
-                {
-                  upmsPermission: {
-                    permissionId: 53,
-                    systemId: null,
-                    pid: 52,
-                    name: "制作单位管理",
-                    type: null,
-                    permissionValue: null,
-                    uri: "/home/everyday/productionUnit",
-                    icon: "#",
-                    status: 1,
-                    ctime: 1524650451000,
-                    orders: 0
-                  },
-                  children: []
-                },
-                {
-                  upmsPermission: {
-                    permissionId: 132,
-                    systemId: null,
-                    pid: 52,
-                    name: "可疑情况管理",
-                    type: null,
-                    permissionValue: null,
-                    uri: "/home/everyday/suspicious",
-                    icon: "#",
-                    status: 1,
-                    ctime: 1526347890000,
-                    orders: 4
-                  },
-                  children: []
-                },
-                {
-                  upmsPermission: {
-                    permissionId: 73,
-                    systemId: null,
-                    pid: 52,
-                    name: "从业人员查询",
-                    type: null,
-                    permissionValue: null,
-                    uri: "/home/everyday/employeeG",
-                    icon: "#",
-                    status: 1,
-                    ctime: 1524702448000,
-                    orders: 2
-                  },
-                  children: []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          upmsPermission: {
-            permissionId: 23,
-            systemId: null,
-            pid: 0,
-            name: "业务管理",
-            type: null,
-            permissionValue: "",
-            uri: "/business",
-            icon: "#",
-            status: 1,
-            ctime: 1524125115000,
-            orders: 2
-          },
-          children: [
-            {
-              upmsPermission: {
-                permissionId: 35,
-                systemId: null,
-                pid: 23,
-                name: "印章管理",
-                type: null,
-                permissionValue: "",
-                uri: "#",
-                icon: "#",
-                status: 1,
-                ctime: 1524208297000,
-                orders: 1
-              },
-              children: [
-                {
-                  upmsPermission: {
-                    permissionId: 78,
-                    systemId: null,
-                    pid: 35,
-                    name: "印章查询",
-                    type: null,
-                    permissionValue: null,
-                    uri: "/home/business/sealInquiry",
-                    icon: "#",
-                    status: 1,
-                    ctime: 1524709944000,
-                    orders: 1
-                  },
-                  children: []
-                },
-                {
-                  upmsPermission: {
-                    permissionId: 77,
-                    systemId: null,
-                    pid: 35,
-                    name: "订单查询",
-                    type: null,
-                    permissionValue: null,
-                    uri: "/home/business/orderInquiry",
-                    icon: "#",
-                    status: 1,
-                    ctime: 1524709917000,
-                    orders: 0
-                  },
-                  children: []
-                }
-              ]
+        children: [
+          {
+            upmsPermission: {
+              permissionId: 59,
+              systemId: null,
+              pid: 27,
+              name: "帮助中心",
+              type: null,
+              permissionValue: null,
+              uri: "/home/help",
+              icon: "#",
+              status: 1,
+              ctime: 1524651653000,
+              orders: 0
             },
-            {
-              upmsPermission: {
-                permissionId: 76,
-                systemId: null,
-                pid: 23,
-                name: "私章管理",
-                type: null,
-                permissionValue: null,
-                uri: "#1",
-                icon: "#",
-                status: 1,
-                ctime: 1524709790000,
-                orders: 2
-              },
-              children: [
-                {
-                  upmsPermission: {
-                    permissionId: 83,
-                    systemId: null,
-                    pid: 76,
-                    name: "订单查询",
-                    type: null,
-                    permissionValue: null,
-                    uri: "/home/business/orderInquirys",
-                    icon: "#",
-                    status: 1,
-                    ctime: 1525395627000,
-                    orders: 1
-                  },
-                  children: []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          upmsPermission: {
-            permissionId: 44,
-            systemId: null,
-            pid: 0,
-            name: "首页",
-            type: null,
-            permissionValue: null,
-            uri: "",
-            icon: "#",
-            status: 1,
-            ctime: 1524558041000,
-            orders: 0
-          },
-          children: []
-        },
-        {
-          upmsPermission: {
-            permissionId: 26,
-            systemId: null,
-            pid: 0,
-            name: "统计分析",
-            type: null,
-            permissionValue: "",
-            uri: "/count",
-            icon: "#",
-            status: 1,
-            ctime: 1524125169000,
-            orders: 10
-          },
-          children: [
-            {
-              upmsPermission: {
-                permissionId: 106,
-                systemId: null,
-                pid: 26,
-                name: "查询统计",
-                type: null,
-                permissionValue: null,
-                uri: "#",
-                icon: "#",
-                status: 1,
-                ctime: 1525751410000,
-                orders: 1
-              },
-              children: [
-                {
-                  upmsPermission: {
-                    permissionId: 119,
-                    systemId: null,
-                    pid: 106,
-                    name: "用户统计",
-                    type: null,
-                    permissionValue: null,
-                    uri: "/home/count/usertj",
-                    icon: "#",
-                    status: 1,
-                    ctime: 1525765238000,
-                    orders: 5
-                  },
-                  children: []
+            children: [
+              {
+                upmsPermission: {
+                  permissionId: 139,
+                  systemId: null,
+                  pid: 59,
+                  name: "操作手册",
+                  type: null,
+                  permissionValue: null,
+                  uri: "/home/help/operationManual",
+                  icon: "#",
+                  status: 1,
+                  ctime: 1528967952000,
+                  orders: 2
                 },
-                {
-                  upmsPermission: {
-                    permissionId: 118,
-                    systemId: null,
-                    pid: 106,
-                    name: "印章统计",
-                    type: null,
-                    permissionValue: null,
-                    uri: "/home/count/sealtj",
-                    icon: "#",
-                    status: 1,
-                    ctime: 1525765205000,
-                    orders: 4
-                  },
-                  children: []
+                children: []
+              },
+              {
+                upmsPermission: {
+                  permissionId: 123,
+                  systemId: null,
+                  pid: 59,
+                  name: "驱动下载",
+                  type: null,
+                  permissionValue: null,
+                  uri: "/home/help/commonSealFlow",
+                  icon: "#",
+                  status: 1,
+                  ctime: 1525834477000,
+                  orders: 1
                 },
-                {
-                  upmsPermission: {
-                    permissionId: 117,
-                    systemId: null,
-                    pid: 106,
-                    name: "交易统计",
-                    type: null,
-                    permissionValue: null,
-                    uri: "/home/count/dealtj",
-                    icon: "#",
-                    status: 1,
-                    ctime: 1525765184000,
-                    orders: 3
-                  },
-                  children: []
-                }
-              ]
-            }
-          ]
-        }
-      ]
+                children: []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        upmsPermission: {
+          permissionId: 43,
+          systemId: null,
+          pid: 0,
+          name: "日常管理",
+          type: null,
+          permissionValue: null,
+          uri: "/everyday",
+          icon: "#",
+          status: 1,
+          ctime: 1524556502000,
+          orders: 5
+        },
+        children: [
+          {
+            upmsPermission: {
+              permissionId: 52,
+              systemId: null,
+              pid: 43,
+              name: "日常管理",
+              type: null,
+              permissionValue: null,
+              uri: "#",
+              icon: "#",
+              status: 1,
+              ctime: 1524650411000,
+              orders: 1
+            },
+            children: [
+              {
+                upmsPermission: {
+                  permissionId: 53,
+                  systemId: null,
+                  pid: 52,
+                  name: "制作单位管理",
+                  type: null,
+                  permissionValue: null,
+                  uri: "/home/everyday/productionUnit",
+                  icon: "#",
+                  status: 1,
+                  ctime: 1524650451000,
+                  orders: 0
+                },
+                children: []
+              },
+              {
+                upmsPermission: {
+                  permissionId: 132,
+                  systemId: null,
+                  pid: 52,
+                  name: "可疑情况管理",
+                  type: null,
+                  permissionValue: null,
+                  uri: "/home/everyday/suspicious",
+                  icon: "#",
+                  status: 1,
+                  ctime: 1526347890000,
+                  orders: 4
+                },
+                children: []
+              },
+              {
+                upmsPermission: {
+                  permissionId: 73,
+                  systemId: null,
+                  pid: 52,
+                  name: "从业人员查询",
+                  type: null,
+                  permissionValue: null,
+                  uri: "/home/everyday/employeeG",
+                  icon: "#",
+                  status: 1,
+                  ctime: 1524702448000,
+                  orders: 2
+                },
+                children: []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        upmsPermission: {
+          permissionId: 23,
+          systemId: null,
+          pid: 0,
+          name: "业务管理",
+          type: null,
+          permissionValue: "",
+          uri: "/business",
+          icon: "#",
+          status: 1,
+          ctime: 1524125115000,
+          orders: 2
+        },
+        children: [
+          {
+            upmsPermission: {
+              permissionId: 35,
+              systemId: null,
+              pid: 23,
+              name: "印章管理",
+              type: null,
+              permissionValue: "",
+              uri: "#",
+              icon: "#",
+              status: 1,
+              ctime: 1524208297000,
+              orders: 1
+            },
+            children: [
+              {
+                upmsPermission: {
+                  permissionId: 78,
+                  systemId: null,
+                  pid: 35,
+                  name: "印章查询",
+                  type: null,
+                  permissionValue: null,
+                  uri: "/home/business/sealInquiry",
+                  icon: "#",
+                  status: 1,
+                  ctime: 1524709944000,
+                  orders: 1
+                },
+                children: []
+              },
+              {
+                upmsPermission: {
+                  permissionId: 77,
+                  systemId: null,
+                  pid: 35,
+                  name: "订单查询",
+                  type: null,
+                  permissionValue: null,
+                  uri: "/home/business/orderInquiry",
+                  icon: "#",
+                  status: 1,
+                  ctime: 1524709917000,
+                  orders: 0
+                },
+                children: []
+              }
+            ]
+          },
+          {
+            upmsPermission: {
+              permissionId: 76,
+              systemId: null,
+              pid: 23,
+              name: "私章管理",
+              type: null,
+              permissionValue: null,
+              uri: "#1",
+              icon: "#",
+              status: 1,
+              ctime: 1524709790000,
+              orders: 2
+            },
+            children: [
+              {
+                upmsPermission: {
+                  permissionId: 83,
+                  systemId: null,
+                  pid: 76,
+                  name: "订单查询",
+                  type: null,
+                  permissionValue: null,
+                  uri: "/home/business/orderInquirys",
+                  icon: "#",
+                  status: 1,
+                  ctime: 1525395627000,
+                  orders: 1
+                },
+                children: []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        upmsPermission: {
+          permissionId: 44,
+          systemId: null,
+          pid: 0,
+          name: "首页",
+          type: null,
+          permissionValue: null,
+          uri: "",
+          icon: "#",
+          status: 1,
+          ctime: 1524558041000,
+          orders: 0
+        },
+        children: []
+      },
+      {
+        upmsPermission: {
+          permissionId: 26,
+          systemId: null,
+          pid: 0,
+          name: "统计分析",
+          type: null,
+          permissionValue: "",
+          uri: "/count",
+          icon: "#",
+          status: 1,
+          ctime: 1524125169000,
+          orders: 10
+        },
+        children: [
+          {
+            upmsPermission: {
+              permissionId: 106,
+              systemId: null,
+              pid: 26,
+              name: "查询统计",
+              type: null,
+              permissionValue: null,
+              uri: "#",
+              icon: "#",
+              status: 1,
+              ctime: 1525751410000,
+              orders: 1
+            },
+            children: [
+              {
+                upmsPermission: {
+                  permissionId: 119,
+                  systemId: null,
+                  pid: 106,
+                  name: "用户统计",
+                  type: null,
+                  permissionValue: null,
+                  uri: "/home/count/usertj",
+                  icon: "#",
+                  status: 1,
+                  ctime: 1525765238000,
+                  orders: 5
+                },
+                children: []
+              },
+              {
+                upmsPermission: {
+                  permissionId: 118,
+                  systemId: null,
+                  pid: 106,
+                  name: "印章统计",
+                  type: null,
+                  permissionValue: null,
+                  uri: "/home/count/sealtj",
+                  icon: "#",
+                  status: 1,
+                  ctime: 1525765205000,
+                  orders: 4
+                },
+                children: []
+              },
+              {
+                upmsPermission: {
+                  permissionId: 117,
+                  systemId: null,
+                  pid: 106,
+                  name: "交易统计",
+                  type: null,
+                  permissionValue: null,
+                  uri: "/home/count/dealtj",
+                  icon: "#",
+                  status: 1,
+                  ctime: 1525765184000,
+                  orders: 3
+                },
+                children: []
+              }
+            ]
+          }
+        ]
+      }
+    ]
   };
 });

@@ -19,7 +19,7 @@
         
          <el-submenu :index="item.upmsPermission.uri" v-for="(item,index) in slideNavData" :key="index" v-if="item.children.length != 0">
             <template slot="title">
-              <i class="el-icon-setting"></i>
+              <i :class="item.upmsPermission.icon"></i>
               <span slot="title">{{item.upmsPermission.name}}</span>
             </template>
             
@@ -54,9 +54,10 @@ export default {
         :collapse="isCollapse"    //是否支持收缩
         unique-opened  每次只打开一个
 
-        default-active ="" 默认选中项
+        <i class="el-icon-setting"></i>  图标
 
-        theme="dark"  主题
+        default-active =""  默认展开项 展开与index值对应一项
+
    */
   /* 
         @open="handleOpen"   展开导航栏事件
@@ -96,7 +97,7 @@ export default {
 </script>
 
 <style scoped>
-.el-menu-vertical-demo:not(.el-menu--collapse) {
+.el-menu-vertical-demo:not(.el-menu--collapse) {    /* 导航栏宽高 */
   width: 200px;
   min-height: 400px;
 }
