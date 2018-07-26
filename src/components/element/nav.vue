@@ -1,6 +1,6 @@
 <template>
   <div style="margin-top:10px;">
-      <router-link v-for="(item,index) in btncon" :key='index' v-text="item.con" :to='item.uri' ></router-link>
+      <router-link  v-for="(item,index) in btncon" :key='index' v-text="item.con" :to='item.uri' ></router-link>
       <div style="margin-top:20px;">
             <router-view/>          
       </div>
@@ -10,7 +10,7 @@
   export default {
     data() {
       return {
-        btncon:[{uri:'/elementUi/nav',con:'左侧导航'}]
+        btncon:[{uri:'/nav/sliderNav',con:'左侧导航'}]
       }
     }
   }
