@@ -30,7 +30,7 @@
                 ]
       },
       nav(){
-        this.btncon = [{uri:'/nav',con:'导航栏'}]
+        this.$router.push("/nav");
       }
     },
   }
