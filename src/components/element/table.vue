@@ -3,6 +3,7 @@
       <section style="margin-bottom:20px;">
         <el-button type='info' @click="table">table表格</el-button>
         <el-button type='info' @click="nav">导航栏</el-button>
+        <el-button type='info' @click="file">文件上传</el-button>
       </section>
       <div>
         <router-link v-for="(item,index) in btncon" :key='index' v-text="item.con" :to='item.uri' ></router-link>
@@ -31,6 +32,10 @@
       },
       nav(){
         this.$router.push("/nav");
+        this.btncon = [{uri:'/nav',con:'导航栏'}]
+      },
+      file(){
+        this.$router.push('/upfile')
       }
     },
   }

@@ -17,6 +17,7 @@ import tableJson from "@/components/element/tablecomponent/tableJson";
 import moreTable from "@/components/element/tablecomponent/moreTable";
 import nav from "@/components/element/nav";
 import sliderNav from "@/components/element/nav/sliderNav";
+import upfile from "@/components/element/file/upfile";
 
 
 
@@ -133,6 +134,28 @@ const router = new Router({
       path: "/nav",
       component: nav,
       children: [
+        {
+            path: '/upfile', 
+            component: upfile
+        },
+        {
+            path: "/components",
+            component: components,
+            children: [
+                {
+                    path: "childParentTransfer",
+                    component: childParentTransfer
+                },
+                {
+                    path: "equalComponent",
+                    component: equalComponent
+                },
+                {
+                    path: "parentChildTransfer",
+                    component: parentChildTransfer
+                }
+            ]
+        },
         {
           path: "sliderNav",
           component: sliderNav
