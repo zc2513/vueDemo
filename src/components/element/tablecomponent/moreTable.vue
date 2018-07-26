@@ -6,7 +6,7 @@
            <el-button type="info" @click="getdata(2)">无选择框</el-button>
         </div>
         <div v-if="suninfo">
-            <b style="color:00c;font-size:20px;">子组件所传的值展示区域(调试框可看所有值)：</b> {{suninfo.type || suninfo}}
+            <b style="color:00f;font-size:20px;">子组件所传的值展示区域(调试框可看所有值)：</b> {{suninfo.type || suninfo}}
         </div>
         <tablePug :msg = 'tableList' @sendVal='getVal'></tablePug>
         <page @pagesend='getPageData'></page>
@@ -27,21 +27,32 @@ import page from './page'
                     tableData: [],
                     titles: [],
                     type:true,//有无选择框 true/false 默认为true
-                    btnconfig:{//----------------------------按钮项配置
+                    btnconfig:{//----------------------------按钮项配置/不传则不展示
                         title:'按钮项',
-                        width:'200',//每增加一个按钮宽度增加100
+                        width:'250',//按钮项宽度
                         btnlist:[
                             {
-                                con:'删除',                                
+                                // con:'删除',  //按钮内容 若果使用内容不使用图标，若使用图标和内容则不建议使用圆形
+                                concolor:'#fff',//文字颜色
+                                backgroundColor:'#999',  //按钮背景色                                
+                                icon:'el-icon-zoom-in', //使用字体图标为按钮  
+                                circle:true, //控制按钮是否为圆形   false/true  默认false                                                                                                  
                                 type:'primary',//按钮模式
-                                concolor:'#00c',
-                                backgroundColor:'#ccc',            
+                                size:'small',//按钮大小medium / small / mini 默认为mini
                             },
                             {
                                 con:'详情',
                                 type:'success',
-                                concolor:'#0c0',
-                                backgroundColor:'#f00'
+                                concolor:'#fff',
+                                backgroundColor:'#f00',
+                            },
+                            {
+                                con:'共存',
+                                concolor:'#00c',
+                                backgroundColor:'#ccc',                               
+                                icon:'el-icon-check',
+                                type:'primary',
+                                size:'small',
                             },
                         ] 
                     }

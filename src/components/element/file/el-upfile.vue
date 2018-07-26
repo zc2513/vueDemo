@@ -4,11 +4,11 @@
             ref='fileup'
             list-type="picture-card" 
             :on-preview="handlePictureCardPreview" 
+            :file-list="fileList2"
             :limit='2'
             :http-request='upimg'
             :on-exceed='ccxz'
             :on-remove="handleRemove">
-            <img v-if="imageUrl" :src="imageUrl" class="avatar">
             <i class="el-icon-plus"></i>
         </el-upload>
         <el-dialog :visible.sync="dialogVisible">
@@ -18,13 +18,29 @@
 </template>
 
 <script>
+// limit :最大文件上传次数
+// on-exceed :超过limit限制后触发
+// on-preview :放大
+// on-remove :移除
+// http-request :自定义请求
     export default {
         data() {
             return {
-                imageUrl: '',
                 dialogImageUrl: '',
-                dialogVisible: false
+                dialogVisible: false,
+                fileList2:[]
             };
+        },
+        props:["setImaSrc"],
+        watch:{
+            setImaSrc(value){
+                // this.fileList2.push({
+                //     url:value
+                // });
+                this.fileList2=[{
+                    url:value
+                }];
+            }
         },
         methods: {
             handleRemove(file, fileList) {

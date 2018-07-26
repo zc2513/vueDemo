@@ -1,5 +1,5 @@
 <template>
-     <div v-if="list.length != 0">
+     <div class="tableGBCls" v-if="list.length != 0">
           <el-table size="small" ref="multipleTable" 
                     :data="list.tableData" 
                     highlight-current-row
@@ -13,16 +13,23 @@
                     <el-table-column v-for="(item,index) in list.titles"  align='center' :key='index' 
                                     :property="item.data" :label="item.name"
                                     > 
-                                    <!-- :width=" (item.name == '订单金额' || item.name == '支付方式') ? '100':''" -->
+                                    <!-- :width=" (item.name == '订单金额' || item.name == '支付方式') ? '100':''" 
+                                        根据自己需求，如果定义的内容过多可以让指定的列固定宽度
+                                    -->
                     </el-table-column>
                     <el-table-column fixed="right"  type="btn"  v-if="list.btnconfig" :label='list.btnconfig.title' :width='list.btnconfig.width' align="center">
                             <template slot-scope="scope">   
                                 <el-button 
                                     v-for="(ele,y) in list.btnconfig.btnlist" :key='y'
+                                    :style='{color:ele.concolor,backgroundColor:ele.backgroundColor,borderColor:ele.backgroundColor}'
                                     :type="ele.type" 
-                                    size='mini'            
-                                    @click.stop='operate(ele.con,scope.row)'>
-                                    {{ele.con}}</el-button>
+                                    :size='ele.size||"mini"'            
+                                    @click.stop='operate(ele.con||ele.icon,scope.row)' 
+                                    :icon="ele.icon"
+                                    :circle='ele.circle'
+                                    >
+                                    {{ele.con}}
+                                    </el-button>
                             </template>  
                     </el-table-column>
             </el-table>
@@ -84,4 +91,12 @@ export default {
     }
 };
 </script>
+<style lang='scss'>
+.tableGBCls{
+    .el-button [class*=el-icon-]+span{
+        margin: 0;
+    }
+}
+</style>
+
 
