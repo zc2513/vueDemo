@@ -988,7 +988,7 @@ Mock.mock("/api/data2", (req, res) => {
                 name: "私章管理",
                 type: null,
                 permissionValue: null,
-                uri: "#",
+                uri: "#1",
                 icon: "#",
                 status: 1,
                 ctime: 1524709790000,
