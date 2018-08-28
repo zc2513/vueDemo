@@ -2,7 +2,7 @@
     <section>
         <div>
             <slot-test>
-                <h4 slot="h4">直接写在组件内的东西都属于slot插槽中展示的内容</h4>
+                <h4 slot="name">直接写在组件内的东西都属于slot插槽中展示的内容</h4>
                 <p>
                     我是插槽内容1，哈哈哈哈
                 </p>
@@ -35,7 +35,7 @@ export default {
             template:`
                 <div class="test_box">
                     <h2 style='color:#00c;'>slot插槽测试</h2>
-                    <slot name='h4'></slot>
+                    <slot name='name'></slot>
                     <slot>插槽的默认内容 当插槽没有输入内容的时候会显示</slot>
                     <slot name='testp'>插槽的默认内容，在指定的有名插槽下不会有效</slot>
                 </div>

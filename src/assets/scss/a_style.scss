@@ -11,7 +11,11 @@
  }
 
  a:hover {
-   // box-shadow: 1px 1px 3px 2px rgb(204,204,204) inset ,-1px -1px 3px 2px rgb(204,204,204) inset;
+   //box-shadow: 1px 1px 3px 2px rgb(204,204,204) inset ,-1px -1px 3px 2px rgb(204,204,204) inset;
    box-shadow: 1px 30px 50px #ccc;
-   transform: translateY(-8px);
- }
+   transform: translateY(-10px);
+   -webkit-transform: translateY(-10px);
+   -moz-transform: translateY(-10px);
+   -ms-transform: translateY(-10px);
+   -o-transform: translateY(-10px);
+}

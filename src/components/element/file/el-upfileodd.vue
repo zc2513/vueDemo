@@ -87,10 +87,10 @@ export default {
 <style lang='scss'>
 //插件的样式需要全局修改 ，局部的名称防止冲突
 .oddFileUp{
-    $filew:150px;//盒子宽高
-    $fileh:150px;
-    $hoverColor:#00c;//获取焦点/经过颜色
-    $iconColor:#8c939d;
+    $filew:150px !default;//盒子宽高
+    $fileh:150px !default;
+    $hoverColor:#00c !default;//获取焦点/盒子经过颜色
+    $iconColor:#8c939d !default;
     .con{
         width: $filew;
         height: $fileh;

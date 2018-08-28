@@ -20,6 +20,9 @@ import sliderNav from "@/components/element/nav/sliderNav";
 import upfile from "@/components/element/file/upfile";
 
 
+import fileReander from "@/components/element/file/fileReander";
+
+
 
 import childParentTransfer from "@/components/componentransferData/transferValue/childParentTransfer";
 import equalComponent from "@/components/componentransferData/transferValue/equalComponent";
@@ -135,10 +138,6 @@ const router = new Router({
       component: nav,
       children: [
         {
-            path: '/upfile', 
-            component: upfile
-        },
-        {
             path: "/components",
             component: components,
             children: [
@@ -161,6 +160,14 @@ const router = new Router({
           component: sliderNav
         }
       ]
+    },
+    {
+      path: '/upfile',
+      component: upfile
+    },
+    {
+      path: '/fileReander',
+      component: fileReander
     },
     {
       path: "/components",

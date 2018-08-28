@@ -5,6 +5,7 @@
         <p>$forceUpdate---强制更新，一般是vue数据数组追踪理解不到位 </p>
         <section>
             <el-button type="success" @click="lee">按钮</el-button>
+            <el-button type="success" @click="dq">文件读取原生js</el-button>
         </section>
         <router-link to='watch'>watch</router-link>
         <router-link to='watch1'>watch1</router-link>
@@ -44,6 +45,9 @@ export default {
     methods:{
         lee(){
             this.message = Math.random().toFixed(2)+''
+        },
+        dq(){
+            this.$router.push("fileReander")
         }
     }
 }

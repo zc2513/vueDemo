@@ -5,7 +5,7 @@
             list-type="picture-card" 
             :on-preview="handlePictureCardPreview" 
             :file-list="fileList"
-            :limit='4'
+            :limit='3'
             :http-request='upimg'
             :on-exceed='ccxz'
             :on-remove="handleRemove">

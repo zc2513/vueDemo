@@ -11,7 +11,7 @@
             <filel :setImaSrc="imgsrc"></filel>
         </div>
         <div class="file">
-            <h4 style="color:#00c;line-height:30px;">一、单图片上传/拍照</h4>
+            <h4 style="color:#00c;line-height:30px;">一、单图片上传/拍照 --样式可随意修改</h4>
             <oddFile :oddImg="imgsrc"></oddFile>
         </div>
     </div>
@@ -53,7 +53,9 @@ import oddFile from './el-upfileodd.vue'
                             "picExt":'.bmp',
                             'fileType':'2'
                         })
-                    this.$http.postObj('http://seal.yuxinyun.net:8082/common/attachmentUploadByBase64',data).then(res=>{
+                        this.imgsrc = img64;
+
+                    /* this.$http.postObj('http://seal.yuxinyun.net:8082/common/attachmentUploadByBase64',data).then(res=>{//图片上传
                         if(res.state == 'OK'){
                             this.imgsrc = img64;
                             this.$notify({
@@ -61,7 +63,7 @@ import oddFile from './el-upfileodd.vue'
                             })
                             
                         }
-                    })
+                    }) */
                 }
         }
     }

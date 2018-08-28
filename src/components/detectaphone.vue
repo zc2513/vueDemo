@@ -32,7 +32,7 @@ export default {
     },
     methods: {
         getAnswer: function () {
-            if (this.question.indexOf('?') === -1) {
+            if (this.question.indexOf('。') === -1) {
                 this.answer = '问题通常包含一个问号. ;-)'
                 return
             }
