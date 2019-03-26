@@ -63,6 +63,14 @@ export default {
             next(false)
         }
     },
+    watch: {//监测原因，同路由route/Hellow route/index 下的跳转，不会再次建立页面，也就是created不会再调用，watch可以对当前路由下的路由跳转做出监测
+
+        '$route' (to, from) {// 对路由变化作出响应...  在beforeRouteUpdate后面执行
+            alert("在beforeRouteUpdate后面执行");
+            console.log("在beforeRouteUpdate后面执行to到哪去",to)
+            console.log("在beforeRouteUpdate后面执行from从哪来",from)
+        }
+    },
     created(){
         this.init()
     },

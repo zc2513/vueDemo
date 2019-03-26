@@ -20,6 +20,7 @@
         <router-link to='directive'>自定义指令---与过滤器</router-link>
         <router-link :to="`route/${message}`">页面路由--初级</router-link>
         <router-link to="validateForm">表单验证</router-link>
+        <router-link to='gpy'>高拍仪</router-link>
         <br>
         <br>
         <br>

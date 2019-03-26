@@ -14,7 +14,7 @@ function endLoading() {
     loading.close()
 }
 axios.defaults.timeout = 10000;
-// axios.defaults.baseURL = BaseUrl.url;
+axios.defaults.baseURL = BaseUrl.url;
 axios.defaults.withCredentials = true;
 axios.interceptors.request.use((config) => {
     // if (config.url == '/upms/user/login') {

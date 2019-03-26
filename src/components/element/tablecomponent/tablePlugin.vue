@@ -1,3 +1,4 @@
+
 <template>
      <div class="tableGBCls" v-if="list.length != 0">
           <el-table size="small" ref="multipleTable" 
@@ -37,11 +38,21 @@
     </div>  
 </template>
 <script>
+/*  方法注释：
+    {
+        handleSelect    --- 选择框方法      (返回触发事件本身 与 选中行数据)
+        selectTableData --- 点击行方法      (返回触发事件本身 与 选中行数据)
+        selectAll       --- 全选框方法      (返回触发事件本身 与 选中数据)
+        dblclick        --- 双击方法        (返回触发事件本身 与 当前双击行数据)
+        operate         --- 操作按钮方法    (返回点击的按钮本身参数 与 按钮当前行数据)
+        selectData      --- 自定义参数      (存储当前点击的参数和数据) 
+    }
+*/
 export default {
     data(){
         return{
             list:[],
-            selectData: null
+            selectData: null  //点击状态数据记录
         }
     },
     props:["msg"],
@@ -60,7 +71,13 @@ export default {
         selectTableData(row){
             this.radio(row,'行')    
         },
-        radio(row,type){//行单选方法 将行数据传入
+        dblclick(row){
+            this.radio(row,'双击')//走 第三次点击 所以还是选中
+        },
+        operate(item,row){//按钮
+            this.$emit('sendVal',{type:item,data:row})
+        },
+        radio(row,type){// 点击状态封装 处理当前点击事件并存储，在下次点击时清除其它 （行单选方法 存储行数据）
             if(this.selectData && this.selectData == row){
                 this.$refs.multipleTable.toggleRowSelection(row,false)
                 this.$refs.multipleTable.setCurrentRow();
@@ -82,12 +99,7 @@ export default {
             }
             this.$emit('sendVal',{type:'全选',data:this.selectData}) 
         },
-        dblclick(row){
-            this.radio(row,'双击')//走 第三次点击 所以还是选中
-        },
-        operate(item,row){
-            this.$emit('sendVal',{type:item,data:row})
-        },
+        
     }
 };
 </script>
