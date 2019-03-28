@@ -45,7 +45,7 @@ import directive from "@/components/directive/directive";
 // 表单验证
 
 import validateForm from "@/components/form/validateForm";
-import gpy from "@/components/gpydemo/gpy";
+// import gpy from "@/components/gpydemo/gpy";
 
 Vue.use(Router);
 
@@ -218,10 +218,10 @@ const router = new Router({
       path: "/validateForm",
       component: validateForm
     },
-    {
-      path:'/gpy',
-      component:gpy
-    }
+    // {
+    //   path:'/gpy',
+    //   component:gpy
+    // }
   ]
 });
 router.beforeEach((to, from, next) => {
