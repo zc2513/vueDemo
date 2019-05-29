@@ -46,6 +46,7 @@ import directive from "@/components/directive/directive";
 
 import validateForm from "@/components/form/validateForm";
 // import gpy from "@/components/gpydemo/gpy";
+import countView from "@/components/countView/test";
 
 Vue.use(Router);
 
@@ -221,7 +222,12 @@ const router = new Router({
     // {
     //   path:'/gpy',
     //   component:gpy
-    // }
+    // },
+    {
+      path:'/countView',
+      component:countView
+    }
+     
   ]
 });
 router.beforeEach((to, from, next) => {

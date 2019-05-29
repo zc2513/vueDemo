@@ -9,6 +9,7 @@ require('./mock.js')
 import post from './common/http.config.js'
 Vue.prototype.$http = post
 
+// import $ from 'jquery'
 //二维码生成
 import QRCode from 'qrcode'
 import ElementUI from 'element-ui';
