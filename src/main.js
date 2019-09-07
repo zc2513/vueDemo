@@ -41,8 +41,6 @@ new Vue({
   template: '<App/>'
 })
 
-//wxt到此一游
-
 
 
 
