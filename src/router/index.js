@@ -62,6 +62,10 @@ const router = new Router({
       component: watchDemo
     },
     {
+      path: "/comutils",
+      component: ()=> import('@/components/comutils')
+    },
+    {
       path: "/watch1",
       component: watchDemo1,
       beforeEnter: (to, from, next) => {
